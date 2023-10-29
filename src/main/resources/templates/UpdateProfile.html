@@ -1,0 +1,234 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>html table</title>
+    <style>
+        body{
+            background-image: linear-gradient(skyblue,lightblue);
+        }
+        #div0 {
+        position: relative;
+        height:90px;
+        width: 100%;
+        background-image: linear-gradient(50deg,silver,blue);
+            margin-top: -9px;
+        margin-right: 25px;
+    }
+    img {
+        position: absolute;
+        width :50px;
+        height: 50px;
+        padding-top: 21px;
+        margin-left: -660px;
+    }
+    #home{
+        position: absolute;
+        width :60px;
+        height: 60px;
+        padding-top: 20px;
+        margin-left: 20px;
+    }
+    h1 {
+        position: absolute;
+        padding-top: -25px;
+        margin-left: 80px;
+        margin-top: 25px;
+    }
+        #div1
+        {
+            width: 600px;
+            height:480px;
+            background-color: aqua;
+            margin-top: 59px;
+            position: relative;
+        }
+        p{
+            background-color: black;
+            color: black;
+            height: 40px;
+           background: transparent;
+            font-size: 25px;
+            margin-top:  8px;
+         }
+         #displayImage
+         {
+            width: 130px; 
+            height: 130px;
+            margin-top: -80px;
+            position: absolute;
+            margin-left: 230px;
+            display: none;
+         }
+         #buttons
+         {
+            margin-top: 75px;
+            margin-left: -70px;
+            position: absolute;
+            width: 130px;
+            height: 30px;
+            border-radius: 10px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            background-color: blue;
+            color: white;
+         }
+         /* #fileInput
+         {
+            margin-left: -80px;
+            margin-top: 10px;
+            position: absolute;
+         } */
+         #ani{
+            margin-top: 5px;
+            margin-left: 420px;
+            /* width:100%; */
+            height:80px;
+            background-image: linear-gradient(90deg,violet,indigo,blue,green,yellow,orange,red,red,orange,yellow,green,blue,indigo,violet);
+            background-size: 400%;
+            background-position: 400%;
+            animation-name: changeColor;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            font-size: 40px;
+            letter-spacing: 10px;
+            word-spacing: 10px;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+           
+        }
+        @keyframes changeColor {
+            0%{ 
+                background-position: 0%;
+            }
+            100%{
+                background-position: 400%;
+            }
+        }
+        #us
+        {
+            padding-top: 18px;
+            margin-left: -170px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: absolute;
+        }
+        #user
+        {
+            width: 350px;
+            height: 30px;
+        }
+        #em
+        {
+            margin-top: -10px;
+            margin-left: -170px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: absolute;
+        }
+        #email
+        {
+            width: 350px;
+            height: 30px;
+            margin-top: -25px;
+        }
+        #mb
+        {
+            margin-top: -10px;
+            margin-left: -170px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: absolute;
+        }
+        #number
+        {
+            width: 350px;
+            height: 30px;
+            margin-top: -25px;
+        }
+        #pas
+        {
+            margin-top: -10px;
+            margin-left: -170px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: absolute;
+        }
+        #pass
+        {
+            width: 350px;
+            height: 30px;
+            margin-top: -25px;
+        }
+        #profile
+        {
+            margin-top: -10px;
+            margin-left: -170px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: absolute;
+        }
+        #fileInput
+        {
+            width: 350px;
+            height: 30px;
+            margin-top: -25px;
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <div id="div0">
+            <img th:src="@{/images/tracker-remove.jpg.png}">
+            <a th:href="@{Home}"><img id="home" th:src="@{/images/home-png-icon-8.jpg}"></a>
+            <h1>Spring Expense Tracker</h1>
+        </div>
+        <h1 id="ani">Update Your Profile</h1>
+        <div id="div1">
+            <form th:action="@{/updateuser/{id} (id=${session.user.userId})}" 
+            method="post">
+                <label id="us">Username:</label><br><br>
+                <input type="text" id="user" name="userName" th:value="${session.user.userName}"><br><br>
+                
+                <label id="em">Email:</label><br><br>
+                <input type="email" id="email" name="email" th:value="${session.user.email}"><br><br>
+                
+                <label id="mb">Mobile:</label><br><br>
+                <input type="number" id="number" name="mobile" th:value="${session.user.mobile}" ><br><br>
+                
+                <label id="pas">Password:</label><br><br>
+                <input type="password" id="pass" name="password" th:value="${session.user.password}"><br><br>
+                
+                <label id="profile">Profile Photo:</label><br><br>
+                <input type="file" id="fileInput" accept="image/*" name="imageFile"><br><br><br><br>
+                
+                <!-- To display image from session object -->
+                <img id="hii" th:if="${session.image != null}"
+                th:src="'data:image;base64,'+${session.image}">
+                <button id="buttons">Update Profile</button>
+            </form> 
+        </div>
+        <div>
+            <p>&copy; 2023 JSpiders. All rights reserved.</p>
+        </div>
+    </center>
+   <script>
+        var fileInput = document.getElementById("fileInput");
+        var displayImage = document.getElementById("hii");
+
+        fileInput.addEventListener("change", function(){
+            const file = fileInput.files[0];
+            if(file && file.type.startsWith("image/"))
+            {
+                const reader = new FileReader();
+                reader.onload = function(e)
+                {
+                   // displayImage.src = e.target.result;
+                    displayImage.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        })
+    </script>
+</body>
+</html>

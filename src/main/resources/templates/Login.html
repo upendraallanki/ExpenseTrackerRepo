@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #div1 {
+        height:90px;
+        width: 1400px;
+        background-color: rgb(0, 255, 255);
+        margin-right: 25px;
+    }
+    img {
+        width :50px;
+        height: 50px;
+        padding-top: 20px;
+    }
+    
+    h1 {
+        padding-top: -25px;
+        margin-left: 80px;
+        margin-top: -50px;
+    }
+    #div2 {
+        width:40%;
+        height:400px;
+        background-color:bisque;
+        margin-top:100px;
+        border-radius: 20px;
+        position: relative;
+    }
+    #heading{
+       padding-top: 5px;
+        margin-left: 20px;
+    }
+    #fbicon{
+        margin-left: -50px;
+        width: 50px;
+        height: 50px;
+        margin-top: -33px;
+        position: absolute;
+
+    }
+    #button{
+       position: absolute;
+        width:200px;
+        height:50px;
+        border-radius: 10px;
+        background-color: blue;
+        color: white;
+        font-size: 20px;
+        margin-left:-200px;
+       text-align: center;
+        
+    }
+   #googleicon{
+    margin-left: -30px;
+        width: 30px;
+        height: 30px;
+        margin-top: -25px;
+        position: absolute;
+   }
+   #button2{
+       position: absolute;
+        width:200px;
+        height:50px;
+        border-radius: 10px;
+     font-size: 20px;
+        margin-left:5px;
+       text-align: center;
+       color: black;
+        
+    }
+    #l1{
+        position: absolute;
+        font-size: 20px;
+        margin-left: -50px;
+        padding-top: 18px;
+    }
+    #un{
+        position: absolute;
+        border-radius: 10px;
+        width:400px;
+        height:30px;
+        margin-top: 20px;
+        margin-left: -200px;
+    }
+    #l2{
+        position: absolute;
+        font-size: 20px;
+        margin-left: -50px;
+        padding-top: 48px;
+    }
+    
+    #ps{
+        position: absolute;
+        border-radius: 10px;
+        width:400px;
+        height:30px;
+        margin-top: 50px;
+        margin-left: -200px;
+    }
+
+    #signin{
+       position: absolute;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        width:400px;
+        height:30px;
+        margin-top: 80px;
+        margin-left: -200px;
+    }
+
+    #footer{
+        position: absolute;
+        margin-top: 60px;
+        margin-left: 130px;
+        font-size: 20px;
+        color:orangered;
+    }
+
+</style>
+</head>
+<body>
+    
+        <div id="div1">
+            <img th:src="@{/images/tracker-remove.jpg.png}">
+           
+            <h1>Spring Expense Tracker</h1>
+        </div>
+
+<center>
+  <form form method="POST" th:action="@{/loginOperation}">
+    <div id="div2"><h1 id ="heading">Sign In With</h1>
+       <form>
+            <button  id ="button"><a style="color: white;" th:href="@{https://www.facebook.com/login/}"><img id="fbicon" th:src="@{/images/fb-removebg-preview (1).png}" >Facebook</a></button>
+            <button id="button2"><a style="color: black;" th:href="@{https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=AYZoVhcqtyi6CDHj0Uzi8BNt9ZunsVuZ5PN8zbADCVa3QjMqbL4GVbjb70SxUxhoDj0okoAlX4gR0Q&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S620932658%3A1696155171991849&theme=glif}"><img id="googleicon" th:src="@{/images/google-removebg-preview.png}">Google</a></button> 
+            <br><br>
+            <label id="l1">UserName</label><br>
+            <input id="un" name="userName" type="text"><br>
+            <label id="l2">Password</label><br>
+            <input id="ps"  name="password" type="password"><br><br>
+            <input id="signin" type="submit" value="Login">
+            <br><br><br><br>
+            <h1 id="footer">Not a member?&nbsp;&nbsp;<ins style="color: blue;"><a th:href="@{register}">Sign up now</a></ins></h1><br><br><br><br><br><br><br>
+            <center><h1 style="color:greeen;" th:text="${msg}"></h1></center>
+        </form>
+        
+    </div>
+    </form>
+</center>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+#div1 {
+	height: 90px;
+	width: 100%;
+	background-color: rgb(0, 255, 255);
+	margin-right: 25px;
+}
+
+img {
+	width: 50px;
+	height: 50px;
+	padding-top: 20px;
+}
+
+#img1 {
+	width: 50px;
+	height: 50px;
+	padding-top: 20px;
+	margin-left: 1200px;
+}
+
+h1 {
+	padding-top: -25px;
+	margin-left: 80px;
+	margin-top: -50px;
+}
+
+#div2 {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	background-image: linear-gradient(50deg, palevioletred, black);
+	margin-top: 1px;
+	color: antiquewhite;
+}
+
+#t1 {
+	position: absolute;
+	margin-top: 90px;
+	margin-left: 250px;
+}
+
+#t2 {
+	position: absolute;
+	margin-top: 55px;
+	margin-left: 950px;
+}
+
+#t3 {
+	position: absolute;
+	margin-top: 250px;
+	margin-left: 250px;
+}
+
+#t4 {
+	position: absolute;
+	margin-top: 225px;
+	margin-left: 950px;
+}
+
+#t5 {
+	position: absolute;
+	margin-top: 25px;
+	margin-left: 550px;
+}
+
+#icon1 {
+	position: absolute;
+	margin-left: -365px;
+	margin-top: 20px;
+}
+
+#icon2 {
+	position: absolute;
+	margin-left: 330px;
+	margin-top: -5px;
+}
+
+#icon3 {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	margin-left: -365px;
+	margin-top: 190px;
+}
+
+#icon4 {
+	position: absolute;
+	margin-left: 330px;
+	margin-top: 160px;
+}
+
+#div3 {
+	position: absolute;
+	background-color: black;
+	width: 99%;
+	height: 35px;
+	margin-top: 0.8px;
+}
+
+#copy {
+	position: absolute;
+	width: 25px;
+	height: 20px;
+	margin-top: -12px;
+	margin-left: -200px;
+}
+
+#ctext {
+	position: absolute;
+	color: white;
+	margin-top: 5px;
+	margin-left: 510px;
+	word-spacing: 5px;
+	letter-spacing: 2px;
+}
+
+#sublist  { 
+            
+            list-style-type: none; 
+            color:white; 
+            /* to hide sublist */ 
+            display:none; 
+            /* provide position of sublist per body tag */ 
+            position:absolute; 
+            margin-top: -10px;
+            margin-left: 25px;
+            /* background-color: black; */
+            border-radius: 20px;
+
+        } 
+        #d:hover #sublist
+        { 
+            width: 120px;
+            height: 110px;
+            background-color: black;
+            position: absolute;
+            color:orangered;
+            margin-bottom: 50px;
+            display:block; 
+            padding-top: 20px;
+            margin-left: 1150px;
+            margin-top: 65px;
+            font-size: 19px;
+            padding: 10px;
+            padding-left: 25px;
+            position: absolute;
+            z-index:20;
+            font-weight: bold;
+            
+        }
+        #doll{
+            position: absolute;
+            list-style-type: none;
+            width :50px;
+            height: 50px;
+            padding-top: 20px;
+            margin-left: 1200px;
+            position:fixed;
+
+        }
+        #course{
+            list-style-type: none;
+        }
+        #d{
+            position: relative;
+        }
+
+        #update:hover {
+            background-color:white;
+            font-size: 17px;
+            cursor: pointer;
+            padding-left: 5px;
+            border-radius: 10px;
+        }
+        #up
+        {
+            text-decoration: none;
+            color: orangered;
+        }
+        #up:hover
+        {
+           color:black;
+        }
+        #log:hover{
+            background-color:white;
+            font-size: 17px;
+            color:black;
+            cursor: pointer;
+            padding-left: 30px;
+            border-radius: 10px;
+           
+        }
+        #log
+        {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        #lg
+        {
+            text-decoration: none;
+            color: orangered;
+        }
+        #lg:hover
+        {
+           color:black;
+        }
+        #about:hover{
+            background-color:white;
+            font-size: 17px;
+            color: black;  
+            cursor: pointer;
+            padding-left: 20px;
+            border-radius: 10px;
+        }
+        #about
+        {
+            margin-top: 10px;
+            padding-left: 13px;
+        }
+        #contact:hover{
+            background-color:white;
+            font-size: 17px;
+            color: black;  
+            cursor: pointer;
+            padding-left: 20px;
+            border-radius: 10px;
+        }
+        #contact
+        {
+            margin-top: 10px;
+            padding-left: 6px;
+        }
+</style>
+</head>
+<body>
+
+	<li id="course">   
+        <div id="d">
+            <img id="doll" th:src="@{/images/manseticon-removebg-preview.png}">
+            <ol id="sublist"> 
+            
+
+                <li id="update"><a th:href="@{/expense/updateProfile}" id="up">Update Profile</a></li> 
+                <li id="about">About Us</li> 
+                <li id="contact">Contact Us</li> 
+                <li id="log"><a th:href="@{/logout}">Logout</a></li> 
+            </ol> 
+         </div>
+    </li>
+
+
+
+	<div id="div1">
+		<img th:src="@{/images/tracker-remove.jpg.png}">
+		<h1>Spring Expense Tracker</h1>
+	</div>
+	<center>
+		<div id="div2">
+		
+		
+			<a th:href="@{addExpense}"><div>
+					<img id="icon1" th:src="@{/images/AddExpenses.jpg.png}">
+					<h1 style="color: white;" id="t1">Add Expenses</h1>
+					<br>
+					<br></a></div>
+
+
+			<a th:href="@{/viewExpense/{id} (id=${session.user.userId})}"
+				th:unless="${session == null}">
+				<div>
+					<img id="icon2" th:src="@{/images/eyeIcon-removebg-preview (1).png}">
+					<h1 style="color: white;" id="t2">View Expenses</h1>
+					<br>
+					<br>
+			</a></div>
+			<a th:href="@{/TotalExpense}"><div>
+					<img id="icon3" th:src="@{/images/SummationIcon-removebg-preview (1).png}">
+					<h1 style="color: white;" id="t3">Total Expenses</h1>
+					<br>
+					<br></a>
+			</div>
+
+
+			<a th:href="@{/FilterExpenses}"><div>
+					<img id="icon4" th:src="@{/images/FilterIcon-removebg-preview.png}">
+					<h1 style="color: white;" id="t4">Filter Expenses</h1>
+					<br>
+					<br>
+					<br>
+					<br></a>
+			</div>
+			<h1 id="t5">Welcome&nbsp;<span th:text="${session.user.fullName}" th:unless="${session==null}"></span></h1>
+
+		</div>
+
+
+		<div id="div3">
+			<img id="copy" th:src="@{/images/copyright-removebg-preview.png}">
+			<h2 id="ctext">2023 Jspiders.All rights reserved.</h2>
+		</div>
+	</center>
+</body>
+</html>

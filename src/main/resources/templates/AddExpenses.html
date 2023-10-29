@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #div1 {
+        position: relative;
+        height:90px;
+        width: 100%;
+        background-image: linear-gradient(50deg,silver,blue);
+
+        margin-right: 25px;
+    }
+    img {
+        position: absolute;
+        width :50px;
+        height: 50px;
+        padding-top: 20px;
+    }
+    #home{
+        position: absolute;
+        width :60px;
+        height: 60px;
+        padding-top: 20px;
+        margin-left: 650px;
+    }
+    #img1 {
+        position: absolute;
+        width :50px;
+        height: 50px;
+        padding-top: -25px;
+        margin-top: 1px;
+        margin-left: 1200px;
+    }
+    h1 {
+        position: absolute;
+        padding-top: -25px;
+        margin-left: 80px;
+        margin-top: 25px;
+    }
+
+    #div2{
+        width:100%;
+        height: 500px;
+        background-image: linear-gradient(50deg,yellow,red);
+    }
+    #wallet
+    {
+        width:306px;
+        height:306px;
+        margin-left: 200px;
+        margin-top: 60px;
+
+    }
+    #title{
+        margin-left: 885px;
+        font-size: 25px;
+        margin-top: 40px;
+        
+    }
+   #i1{
+    width:300px;
+    height:30px;
+    border-radius: 20px;
+    margin-left: 800px;
+    margin-top: 80px;
+    padding-left: 10px;
+    border: none;
+    
+   }
+   #i2{
+    width:300px;
+    height:30px;
+    border-radius: 20px;
+    margin-left: 800px;
+    padding-left: 10px;
+    border: none;
+   
+   }
+   #i3{
+    width:300px;
+    height:40px;
+    border-radius: 40px;
+    margin-left: 800px;
+    padding-left: 10px;
+    border: none;
+    
+   }
+   #i4{
+    width:300px;
+    height:100px;
+    border-radius: 20px;
+    margin-left: 800px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+    border: none;
+    
+   }
+   #i5{
+    width:100px;
+    height:30px;
+    color:white;
+    border-radius: 20px;
+    margin-left: 900px;
+    background-color:lime;
+    font-size: 15px;
+    border: none;
+    font-weight: bolder;
+   }
+   #div3 {
+            position: absolute;
+            background-color: black;
+            width:99%;
+            height:35px;
+            margin-top: 0.8px;
+        }
+        #copy{
+            position: absolute;
+            width:25px;
+            height:20px;
+            margin-top: -12px;
+            margin-left: 480px;
+        }
+        #ctext{
+            position: absolute;
+            color: white;
+            margin-top: 5px;
+            margin-left: 510px;
+            word-spacing: 5px;
+            letter-spacing: 2px;
+        }
+        #s{
+       width:310px;
+       height:30px;
+       border-radius: 20px;
+       margin-left: -10px;
+        }
+        #sublist  { 
+            
+            list-style-type: none; 
+            color:white; 
+            /* to hide sublist */ 
+            display:none; 
+            /* provide position of sublist per body tag */ 
+            position:absolute; 
+            margin-top: -10px;
+            margin-left: 25px;
+            /* background-color: black; */
+            border-radius: 20px;
+
+        } 
+        #d:hover #sublist
+        { 
+            width: 120px;
+            height: 110px;
+            background-color: black;
+            position: absolute;
+            color:orangered;
+            margin-bottom: 50px;
+            display:block; 
+            padding-top: 20px;
+            margin-left: 1150px;
+            margin-top: 65px;
+            font-size: 19px;
+            padding: 10px;
+            padding-left: 25px;
+            position: absolute;
+            z-index:20;
+            font-weight: bold;
+            
+        }
+        #doll{
+            position: absolute;
+            list-style-type: none;
+            width :50px;
+            height: 50px;
+            padding-top: 20px;
+            margin-left: 1200px;
+            position:fixed;
+
+        }
+        #course{
+            list-style-type: none;
+        }
+        #d{
+            position: relative;
+        }
+
+        #update:hover {
+            background-color:white;
+            font-size: 17px;
+            cursor: pointer;
+            padding-left: 5px;
+            border-radius: 10px;
+        }
+        #up
+        {
+            text-decoration: none;
+            color: orangered;
+        }
+        #up:hover
+        {
+           color:black;
+        }
+        #log:hover{
+            background-color:white;
+            font-size: 17px;
+            color:black;
+            cursor: pointer;
+            padding-left: 30px;
+            border-radius: 10px;
+           
+        }
+        #log
+        {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        #lg
+        {
+            text-decoration: none;
+            color: orangered;
+        }
+        #lg:hover
+        {
+           color:black;
+        }
+        #about:hover{
+            background-color:white;
+            font-size: 17px;
+            color: black;  
+            cursor: pointer;
+            padding-left: 20px;
+            border-radius: 10px;
+        }
+        #about
+        {
+            margin-top: 10px;
+            padding-left: 13px;
+        }
+        #contact:hover{
+            background-color:white;
+            font-size: 17px;
+            color: black;  
+            cursor: pointer;
+            padding-left: 20px;
+            border-radius: 10px;
+        }
+        #contact
+        {
+            margin-top: 10px;
+            padding-left: 6px;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/addexpense/{id} (id=${session.user.userId})}" th:unless="${session == null}" method="post">
+    <div id="div1">
+        <img th:src="@{/images/tracker-remove.jpg.png}">
+        <a th:href="@{Home}"><img id="home" th:src="@{/images/home-png-icon-8.jpg}"></a>
+        <img id = "img1" th:src="@{/images/manseticon-removebg-preview.png}">
+        <h1>Spring Expense Tracker</h1>
+        
+        
+        <li id="course">   
+        <div id="d">
+            <img id="doll" th:src="@{/images/manseticon-removebg-preview.png}">
+            <ol id="sublist"> 
+            
+
+                <li id="update"><a th:href="@{/web.html}" id="up">Update Profile</a></li> 
+                <li id="about">About Us</li> 
+                <li id="contact">Contact Us</li> 
+                <li id="log"><a th:href="@{/logout}">Logout</a></li> 
+            </ol> 
+         </div>
+    </li>
+    </div>
+
+
+    <div id="div2">
+        <img id="wallet" th:src="@{/images/WalletICon.jpg}">
+        <h1 id="title">Add Expenses</h1>
+        <input id="i1" type="text" name="amount"  placeholder="Amount"> <br><br>
+        <input id="i2" type="date" name="date"><br><br>
+        <div id="i3">
+        <label></label>
+        <select name="category" id="s">
+        <option>Category</option>
+        <option>Utilities</option>
+         <option>Transportation</option>
+        <option>Groceries</option>
+        <option>Dining out</option>
+        <option>HealthCare</option>
+        <option>Entertainment</option>
+        <option>Education</option>
+        <option>Personal Care</option>
+        <option>Clothing</option>
+        <option>Home Maintainance</option>
+        <option>Gifts and Donations</option>
+        <option>Savings and Investments</option>
+        <option>Tax</option>
+        <option>Others</option>
+       </select>
+       </div>
+     <!--   <input id="i3" type="text" name="category" placeholder="Category"><br><br> --> 
+        <textarea id="i4" name="description" placeholder="Description"></textarea><br><br>
+        <input id="i5" type="submit" value="Add&nbsp;+">
+    </div>
+
+    <div id = "div3">
+        <img id="copy" th:src="@{/images/copyright-removebg-preview.png}">
+        <h2 id = "ctext">2023 Jspiders.All rights reserved.</h2>
+    </div>
+    </form>
+</body>
+</html>

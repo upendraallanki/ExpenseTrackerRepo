@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #div1 {
+        position: relative;
+        height:90px;
+        width: 100%;
+        background-image: linear-gradient(50deg,silver,blue);
+
+        margin-right: 25px;
+    }
+    img {
+        position: absolute;
+        width :50px;
+        height: 50px;
+        padding-top: 20px;
+    }
+    #home{
+        position: absolute;
+        width :60px;
+        height: 60px;
+        padding-top: 20px;
+        margin-left: 650px;
+    }
+    #img1 {
+        position: absolute;
+        width :50px;
+        height: 50px;
+        padding-top: -25px;
+        margin-top: 1px;
+        margin-left: 1200px;
+    }
+    h1 {
+        position: absolute;
+        padding-top: -25px;
+        margin-left: 80px;
+        margin-top: 25px;
+    }
+
+    #div2{
+        width:100%;
+        height: 500px;
+        background-image: linear-gradient(50deg,rgb(234, 234, 181),rgb(236, 126, 126));
+    }
+    #wallet
+    {
+        width:306px;
+        height:306px;
+        margin-left: 200px;
+        margin-top: 60px;
+
+    }
+    #title{
+        margin-left: 885px;
+        font-size: 25px;
+        margin-top: 40px;
+        
+    }
+   #i1{
+    width:300px;
+    height:30px;
+    border-radius: 20px;
+    margin-left: 800px;
+    margin-top: 80px;
+    padding-left: 10px;
+    border: none;
+    
+   }
+   #i2{
+    width:300px;
+    height:30px;
+    border-radius: 20px;
+    margin-left: 800px;
+    padding-left: 10px;
+    border: none;
+   
+   }
+   #i3{
+    width:300px;
+    height:40px;
+    border-radius: 40px;
+    margin-left: 800px;
+    padding-left: 10px;
+    border: none;
+    
+   }
+   #i4{
+    width:300px;
+    height:100px;
+    border-radius: 20px;
+    margin-left: 800px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+    border: none;
+    
+   }
+   #i5{
+    width:100px;
+    height:30px;
+    color:white;
+    border-radius: 20px;
+    margin-left: 900px;
+    background-color:lime;
+    font-size: 15px;
+    border: none;
+    font-weight: bolder;
+   }
+   #div3 {
+            position: absolute;
+            background-color: black;
+            width:99%;
+            height:35px;
+            margin-top: 0.8px;
+        }
+        #copy{
+            position: absolute;
+            width:25px;
+            height:20px;
+            margin-top: -12px;
+            margin-left: 480px;
+        }
+        #ctext{
+            position: absolute;
+            color: white;
+            margin-top: 5px;
+            margin-left: 510px;
+            word-spacing: 5px;
+            letter-spacing: 2px;
+        }
+        #s{
+       width:310px;
+       height:30px;
+       border-radius: 20px;
+       margin-left: -10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div1">
+        <img src="./tracker-remove.jpg.png">
+        <a href="./Home.html"><img id="home" src="./home-png-icon-8.jpg"></a>
+        <img id = "img1" src="./manseticon-removebg-preview.png">
+        <h1>Spring Expense Tracker</h1>
+    </div>
+
+
+    <div id="div2">
+    <form th:action="@{/updateexpense/{eid} (eid=${expense.expenseId})}" method="post">
+        <img id="wallet" src="./WalletICon.jpg">
+        <h1 id="title">Update Expenses</h1>
+        <input id="i1" type="text" name="amount"  placeholder="Amount" th:value="${expense.amount}"> <br><br>
+        <input id="i2" type="date" name="date" th:field="${expense.date}"><br><br>
+        <div id="i3">
+        <label  name="category"></label>
+        <select id="s" name="category" th:field="${expense.category}">
+        <option value="Category">Category</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Transportation">Transportation</option>
+        <option value="Groceries">Groceries</option>
+        <option value="Dining out">Dining out</option>
+        <option value="HealthCare">HealthCare</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Education">Education</option>
+        <option value="Personal Care">Personal Care</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Home Maintainance">Home Maintainance</option>
+        <option value="Gifts and Donations">Gifts and Donations</option>
+        <option value="Savings and Investments">Savings and Investments</option>
+        <option value="Tax">Tax</option>
+        <option value="Others">Others</option>
+       </select>
+       </div>
+     <!--   <input id="i3" type="text" name="category" placeholder="Category"><br><br> --> 
+        <textarea id="i4" name="description" placeholder="Description" th:text="${expense.description}"></textarea><br><br>
+        <input id="i5" type="submit" value="Update&nbsp;+">
+    </div>
+   </form>
+
+    <div id = "div3">
+        <img id="copy" src="./copyright-removebg-preview.png">
+        <h2 id = "ctext">2023 Jspiders.All rights reserved.</h2>
+    </div>
+
+</body>
+</html>
